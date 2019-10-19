@@ -1,5 +1,6 @@
-FROM node:alpine
+FROM node:alpine as builder
 
+# it means after login the container , your current location will be at /app, if you dont specif WORKDIR , it will be /
 WORKDIR '/app'
 
 COPY package.json .
@@ -8,3 +9,5 @@ RUN npm install
 COPY . .
 
 CMD ["npm","run","start"]
+
+# bypass default cmd above , docker run <image_id or tag>   cmd run test

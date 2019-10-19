@@ -5,6 +5,9 @@ docker push wangyan100/frontend:latest
 ### run docker image with mounted dir from host machine you also could exclude sub dir which should not be mounted 
 docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app 1fa89d36dee3
 
+### access running docker container ##
+docker exec -it <container_id>  <command>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
