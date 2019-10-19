@@ -1,0 +1,26 @@
+version: '3'
+services:
+  # name for container called web
+  web:
+    #here customize docker build
+    build:
+      # location of docker make file , here is current dir
+      context: .
+      # docker make file name
+      dockerfile: Dockerfile.dev
+    ports:
+      # map host port with container port , here support a list addresses with -
+      - "3000:3000"
+    volumes:
+      # tell  host machine dont mess up with docker image file directory /app/mode_modules
+      - /app/node_modules
+      # tell host machine mount current dir with docker file system /app
+      - .:/app
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]

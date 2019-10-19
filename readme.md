@@ -1,3 +1,8 @@
+### build docker image with customerized docker file
+docker build -f Dockerfile.dev . -t wangyan100/frontend:latest
+docker push wangyan100/frontend:latest
+
+### run docker image with mounted dir from host machine you also could exclude sub dir which should not be mounted 
 docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app 1fa89d36dee3
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +73,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### pull & push to docker hub
+https://github.com/wangyan100/springbootexamples/tree/master/spring-boot-k8s
