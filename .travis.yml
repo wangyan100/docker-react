@@ -11,4 +11,4 @@ before_install:
 # script section is the script for running test
 script:
   # -- --converage is the trick to let npm run test to return result with test converage report, otherwise it will hang there wait for input from user
-  - docker run wangyan100/docker-react npm run test -- --converage
+  - docker run wangyan100/docker-react npm run test -- --coverage
