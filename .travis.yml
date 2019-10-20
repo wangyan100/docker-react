@@ -1,3 +1,4 @@
+#https://travis-ci.org/wangyan100/docker-react
 # to tell travis ci , need sudo user right
 sudo: required
 services:
