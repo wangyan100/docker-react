@@ -1,4 +1,5 @@
-#https://travis-ci.org/wangyan100/docker-react
+# reference https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11437142#content
+# https://travis-ci.org/wangyan100/docker-react
 # to tell travis ci , need sudo user right
 sudo: required
 services:
@@ -13,3 +14,16 @@ before_install:
 script:
   # -- --converage is the trick to let npm run test to return result with test converage report, otherwise it will hang there wait for input from user
   - docker run wangyan100/docker-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-235134183621"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
