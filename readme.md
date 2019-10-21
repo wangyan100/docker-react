@@ -79,3 +79,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### pull & push to docker hub
 https://github.com/wangyan100/springbootexamples/tree/master/spring-boot-k8s
+
+### delete resource created by elasticbeanstack to avoid to be charged ###
+https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11437188#questions
